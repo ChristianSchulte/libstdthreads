@@ -65,7 +65,7 @@ tss_set(tss_t key, void *val)
 	return (thrd_success);
 }
 
-#if !_defined(__APPLE__)
+#if !defined(__APPLE__)
 _Static_assert(TSS_DTOR_ITERATIONS == PTHREAD_DESTRUCTOR_ITERATIONS,
     "TSS_DTOR_ITERATIONS must be identical to PTHREAD_DESTRUCTOR_ITERATIONS");
 #endif
