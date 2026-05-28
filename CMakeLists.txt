@@ -23,9 +23,9 @@ project(
 
 find_package(Threads)
 
-add_library(stdthreads)
+add_library(bsd-stdthreads)
 
-target_sources(stdthreads
+target_sources(bsd-stdthreads
 	PRIVATE
 		cnd.c
 		mtx.c
@@ -38,4 +38,4 @@ target_sources(stdthreads
 			threads.h
 )
 
-target_link_libraries(stdthreads Threads::Threads)
+target_link_libraries(bsd-stdthreads Threads::Threads)
