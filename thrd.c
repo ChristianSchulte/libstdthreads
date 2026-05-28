@@ -120,9 +120,12 @@ thrd_sleep(const struct timespec *duration, struct timespec *remaining)
 	return (nanosleep(duration, remaining));
 }
 
+#if !defined(__APPLE__)
 void
 thrd_yield(void)
 {
 
 	pthread_yield();
 }
+#endif
+

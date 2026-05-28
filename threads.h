@@ -163,7 +163,9 @@ _Noreturn void
 	thrd_exit(int);
 int	thrd_join(thrd_t, int *);
 int	thrd_sleep(const struct timespec *, struct timespec *);
+#if !defined(__APPLE__)
 void	thrd_yield(void);
+#endif
 int	tss_create(tss_t *, tss_dtor_t);
 void	tss_delete(tss_t);
 void *	tss_get(tss_t);
