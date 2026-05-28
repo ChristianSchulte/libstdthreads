@@ -146,9 +146,11 @@ int	mtx_init(mtx_t *__mtx, int)
     __requires_unlocked(*__mtx);
 int	mtx_lock(mtx_t *__mtx)
     __locks_exclusive(*__mtx);
+#if !defined(__APPLE__)
 int	mtx_timedlock(mtx_t *__restrict __mtx,
     const struct timespec *__restrict)
     __trylocks_exclusive(thrd_success, *__mtx);
+#endif
 int	mtx_trylock(mtx_t *__mtx)
     __trylocks_exclusive(thrd_success, *__mtx);
 int	mtx_unlock(mtx_t *__mtx)

@@ -78,6 +78,7 @@ mtx_lock(mtx_t *mtx)
 	return (thrd_success);
 }
 
+#if !defined(__APPLE__)
 int
 mtx_timedlock(mtx_t *restrict mtx, const struct timespec *restrict ts)
 {
@@ -91,6 +92,7 @@ mtx_timedlock(mtx_t *restrict mtx, const struct timespec *restrict ts)
 		return (thrd_error);
 	}
 }
+#endif
 
 int
 mtx_trylock(mtx_t *mtx)
