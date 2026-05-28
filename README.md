@@ -1,0 +1,1 @@
+This repository tracks the upstream repository https://code.tetaneutral.net/mherrb/libstdthreads.git holding the OpenBSD port of FreeBSD libstdthreads. The only purpose is to make that library available with CMake FetchContent to get C11 threads support on platforms providing POSIX threads but not C11 threads (like MacOS).
