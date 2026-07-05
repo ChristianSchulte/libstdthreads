@@ -1,5 +1,5 @@
 LIB=	stdthreads
-PACKAGE_VERSION?=	0.3.2
+PACKAGE_VERSION?=	0.3.3
 PREFIX?=	/usr
 
 HDR=	threads.h

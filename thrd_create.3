@@ -191,7 +191,6 @@ If successful, the
 .Fn thrd_detach ,
 .Fn thrd_equal ,
 .Fn thrd_join ,
-.Fn thrd_sleep ,
 .Fn tss_create
 and
 .Fn tss_set
@@ -202,6 +201,16 @@ Otherwise an error code will be returned to indicate the error.
 The
 .Fn thrd_current
 function returns the thread ID of the calling thread.
+.Pp
+The
+.Fn thrd_sleep
+function returns zero if the requested time has elapsed,
+-1 if it has been interrupted by a signal,
+or a negative value (which can also be -1) if it fails for any other reason.
+If a negative value is returned, errno should be checked to distinguish
+EINTR (in which case,
+.Fa remaining
+contains the unslept time) from other values.
 .Pp
 The
 .Fn tss_get
